@@ -7,26 +7,37 @@ Caseify is a website for your custom iphone cases
 git clone https://github.com/Ameen6789/caseify
 ```
 ### To run frontend (Angular version>=16.2.15)
-1.open terminal and navigate to caseify folder
+1. open terminal and navigate to caseify folder
 ```
 cd caseify\frontend\caseify
 ```
-2.install npm packages
+2. install npm packages
 ```
 npm install
 ```
-3. run the server
+3. create a new environment
+```
+ng g environments
+```
+4. add this to environent.ts file inside caseify\caseify\src\environments
+```
+export const environment = {
+    AUTH0_DOMAIN:# add auth domain id here
+    AUTH0_CLIENT_ID: // add your auth0 clinet id here
+    STRIPE_PUBLIC_KEY://add you stripe public key here
+};
+```
+5. run the server
 ```
 ng serve -o
 ```
 
 ### To run backend
-1.open a new terminal and navigate to backend folder 
+1. open a new terminal and navigate to backend folder 
 
 ```
 cd caseify\backend
 ```
-
 2.create virtual environment
 
 ```
