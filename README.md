@@ -1,5 +1,29 @@
 # Caseify
 Caseify is a website for your custom iphone cases 
+
+
+
+
+![Screenshot (449)](https://github.com/user-attachments/assets/64c585a5-555a-43c5-81f8-ca59cafeb821)
+
+
+![Screenshot (450)](https://github.com/user-attachments/assets/ac50d8c8-f83c-4770-b761-6c042a061ca0)
+
+
+![Screenshot (454)](https://github.com/user-attachments/assets/27e43345-ad6a-4e33-858c-67a333e4cede)
+
+
+![Screenshot (455)](https://github.com/user-attachments/assets/3d7eea4d-e6bc-41ba-b385-68ed94076a2c)
+
+
+![Screenshot (456)](https://github.com/user-attachments/assets/0671f855-fa7f-40ed-99a0-42266898bed1)
+
+
+![Screenshot (457)](https://github.com/user-attachments/assets/c534780c-6595-4147-b851-6ea2f0cc18fd)
+
+
+
+
 ## How to run locally on windows
 1.Clone Repository
 
