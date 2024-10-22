@@ -1,4 +1,5 @@
 # Caseify
+Caseify is a website for your custom iphone cases 
 ## How to run locally on windows
 1.Clone Repository
 
