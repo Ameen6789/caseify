@@ -4,22 +4,17 @@ Caseify is a website for your custom iphone cases
 
 ![Screenshot (449)](https://github.com/user-attachments/assets/f880d45d-b422-4006-a416-6bd9298b613c)<br/><br/>
 
-![Screenshot (450)](https://github.com/user-attachments/assets/664c56db-a872-4ed4-b442-0f185571a982)
-</br>
-</br>
-![Screenshot (451)](https://github.com/user-attachments/assets/59accdf0-6f4e-4a78-93d2-b58d6b6cdc25)
-</br>
-</br>
-![Screenshot (452)](https://github.com/user-attachments/assets/c3c9c7eb-2b1b-46af-82d5-88426a34cd5d)
-<br>
-<br>
-![Screenshot (456)](https://github.com/user-attachments/assets/0ac65408-0d39-443c-859b-356139b156d7)
-<br>
-<br>
-![Screenshot (457)](https://github.com/user-attachments/assets/07a48fe6-6aee-4321-b8de-233fb01db2cb)
-<br>
-<br>
-![Screenshot (453)](https://github.com/user-attachments/assets/3cb2737c-75d9-44d0-a467-611b9b41f3c0)
+![Screenshot (450)](https://github.com/user-attachments/assets/664c56db-a872-4ed4-b442-0f185571a982)<br/><br/>
+
+![Screenshot (451)](https://github.com/user-attachments/assets/59accdf0-6f4e-4a78-93d2-b58d6b6cdc25)<br/><br/>
+
+![Screenshot (452)](https://github.com/user-attachments/assets/c3c9c7eb-2b1b-46af-82d5-88426a34cd5d)<br/><br/>
+
+![Screenshot (456)](https://github.com/user-attachments/assets/0ac65408-0d39-443c-859b-356139b156d7)<br/><br/>
+
+![Screenshot (457)](https://github.com/user-attachments/assets/07a48fe6-6aee-4321-b8de-233fb01db2cb)<br/><br/>
+
+![Screenshot (453)](https://github.com/user-attachments/assets/3cb2737c-75d9-44d0-a467-611b9b41f3c0)<br/><br/>
 
 ## How to run locally on windows
 1.Clone Repository
