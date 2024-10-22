@@ -1,7 +1,7 @@
 # Caseify
-Caseify is a website for your custom Iphone cases.
-The website is created using Angular, Python and Django
-Used Auth0 for Authentication and integrated Stripe Api for payments<br/><br/><br/>
+Caseify is a website for your custom Iphone cases.<br/>
+The website is created using Angular, Python and Django.<br/>
+Used Auth0 for Authentication and integrated Stripe Api for payments.<br/><br/><br/>
 
 # Home Page
 ![Screenshot (449)](https://github.com/user-attachments/assets/f880d45d-b422-4006-a416-6bd9298b613c)<br/><br/>
