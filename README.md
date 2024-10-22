@@ -3,14 +3,14 @@ Caseify is a website for your custom iphone cases
 
 
 ![Screenshot (449)](https://github.com/user-attachments/assets/f880d45d-b422-4006-a416-6bd9298b613c)
-<br>
-<br>
+</br>
+</br>
 ![Screenshot (450)](https://github.com/user-attachments/assets/664c56db-a872-4ed4-b442-0f185571a982)
-<br>
-<br>
+</br>
+</br>
 ![Screenshot (451)](https://github.com/user-attachments/assets/59accdf0-6f4e-4a78-93d2-b58d6b6cdc25)
-<br>
-<br>
+</br>
+</br>
 ![Screenshot (452)](https://github.com/user-attachments/assets/c3c9c7eb-2b1b-46af-82d5-88426a34cd5d)
 <br>
 <br>
