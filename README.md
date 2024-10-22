@@ -1,5 +1,5 @@
 # Caseify
-Caseify is a website for your custom iphone cases 
+Caseify is a website for your custom iphone cases <br/><br/><br/>
 
 
 ![Screenshot (449)](https://github.com/user-attachments/assets/f880d45d-b422-4006-a416-6bd9298b613c)<br/><br/>
