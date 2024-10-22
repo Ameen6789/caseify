@@ -1,0 +1,33 @@
+body{
+    height: 800px;
+    overflow: hidden;
+    scrollbar-width:none;
+    opacity: 80%;
+}
+
+
+
+.div{
+    height:  100px;
+    
+   
+    
+    width: 100%;
+
+}
+.loading-symbol{
+    width: 50px;
+    height: 50px;
+    border: 5px solid gray;
+    border-radius: 50%;
+    border-bottom: 5px solid gainsboro;
+    animation: rotate 1s infinite linear;
+}
+@keyframes rotate{
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}

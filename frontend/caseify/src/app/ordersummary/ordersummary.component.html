@@ -1,0 +1,165 @@
+<body>
+    <nav class="h-100 bg-white fixed-top navbar border-bottom d-flex">
+        <p class="fw-bold fs-5 mb-0">caseify</p>
+        <ul class="nav d-flex align-items-center justify-content-center fw-bold">
+            
+            <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+                <p (click)="logout()" class="mb-0"><a href="" class="fw-semibold  text-dark text-decoration-none fs-6">Log out</a> </p>
+            </ng-container>
+              
+            <ng-template #loggedOut>
+                <p (click)="login()" class="mb-0"> <a href="" class="fw-semibold text-dark text-decoration-none fs-6">Log in</a></p>
+            </ng-template>
+            
+            
+        </ul>
+    </nav>
+    <div class="d-flex justify-content-center align-items-center bg-white progress-main-container ">
+        <div class="progress-container d-flex flex-lg-column-reverse w-100">
+            <div class="d-flex flex-column flex-lg-row progress-bar me-4 lg-w-100">
+                <div class="completed-progress d-flex bg-success"></div>
+                <div class="current-progress d-flex bg-dark"></div>
+                <div class="remaining-progress d-flex bg-secondary"></div>
+            </div>
+            <div class="d-flex flex-column flex-lg-row  justify-content-start  align-items-start py-3 w-100 row-lg">
+                <div class="d-flex mb-4 mb-lg-0  align-items-center justify-content-center col-lg-4">
+                    <img src="assets/images/snake-1.png" alt="" height="80px" width="80px" class="me-4">
+                    <div class="d-flex flex-column justify-content-center">
+                        <p class="fw-bold mb-0">Step 1: Add image</p>
+                        <p class="text-secondary mb-0">Choose an image for your case</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-4 mb-lg-0  align-items-center justify-content-center col-lg-4">
+                    <img src="assets/images/snake-2.png" alt="" height="80px" width="80px" class="me-4">
+                    <div class="d-flex flex-column justify-content-center">
+                        <p class="fw-bold mb-0">Step 2: Customize design</p>
+                        <p class="text-secondary mb-0">Make the case yours</p>
+                    </div>
+                </div>
+            
+                <div class="d-flex mb-lg-0 align-items-center justify-content-center col-lg-4">
+                    <img src="assets/images/snake-3.png" alt="" height="80px" width="80px" class="me-4">
+                    <div class="d-flex flex-column justify-content-center">
+                        <p class="fw-bold mb-0">Step 3: Summary</p>
+                        <p class="text-secondary mb-0">Review your final design</p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    
+
+    <div class="mt-5  d-lg-flex  main-container">
+        <div class="d-flex  justify-content-center me-0 me-lg-5  pt-2 mb-4 mb-lg-0">
+            <div class="d-inline-block  position-relative">
+                
+                
+                <div class="case-color position-absolute top-0 z-index-0" id="phone-case">
+                    <img src="" alt="" class="position-absolute z-index-2 user-image" id="user_cropped_image">
+                </div>
+                <img src="assets/images/phone-template.png" alt="" height="400px" width="200px" class="z-index-5 position-relative ">
+                
+                
+                
+                
+                
+            </div>
+        </div>
+        <div class="w-100">
+            <h1 class="fw-bold text-center text-lg-start">Your <span id="phone-model"></span> Case</h1>
+
+            <div>
+                <p class="fw-bold fs-6 mb-4 text-center text-lg-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-lg border-2" viewBox="0 0 18 18">
+                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                    </svg>In stock and ready to ship
+                </p>
+
+            </div>
+            <div class="d-md-flex justify-content-between ">
+                <div class="fs-6 mt-5 mt-md-0 pt-5 pt-md-0 pe-lg-3">
+                    <p class="fw-bold fs-6 mb-2">Highlights</p>
+                    <ul class="ms-0 ps-3 ">
+                        <li>Wireless charging compatible</li>
+                        <li>TPU shock absorption</li>
+                        <li>Packaging made from recycled materials</li>
+                        <li>5 year print warranty</li>
+                    </ul>
+                </div>
+
+                <div class="fs-6 my-4 my-md-0 ">
+                    <p class="fw-bold fs-6 mb-2 ">Material</p>
+                    <ul class="ms-0 ps-3">
+                        <li>High-quality, durable material</li>
+                        <li>Scratch and finger print-resistant coating</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <hr class="my-3">
+            <div class="mx-3 mt-4">
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0">Base Price</p>
+                    <p class="fw-bold mb-0">$10.00</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0" id="finish-type"></p>
+                    <p class="fw-bold mb-0" id="finish-price"></p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0"><span id="material-type"></span> Material</p>
+                    <p class="fw-bold mb-0" id="material-price"></p>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <p class="fw-bold mb-0">Order total</p>
+                    <p class="fw-bold mb-0" id="final-price"></p>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-success text-white check-out-button my-5 ms-auto" (click)="checkLogin()"  >
+                        
+                        Check out
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                            </svg>
+                        
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+        
+    
+    </div>
+
+    
+    
+    
+  <div class="modal fade " id="mymodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="w-100 pt-3 pe-3" >
+            <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>  
+        
+        <div class="modal-header border-0 pb-2">
+            
+            <div class="d-flex flex-column align-items-center justify-content-center w-100">
+                <img src="assets/images/snake-1.png" width="90px" height="110px" alt="">
+                <h1 class="modal-title fs-2 fw-bold" id="exampleModalLabel">Login to continue</h1>
+            </div>
+          
+          
+        </div>
+        <div class="modal-body border-0 pt-0 pb-1">
+           <p class="text-center">your configuration is saved . Please login or create an account to complete your purchase</p> 
+        </div>
+        <div class="d-flex align-items-start justify-content-start flex-row  border-0 px-4 m-0 gap-2 mb-4">
+          <button type="button" class="btn btn-light w-50 shadow-sm border border-1" (click)="login()">Login</button>
+          <button type="button m-0" class="btn btn-success w-50" (click)="signup()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

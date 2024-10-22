@@ -1,0 +1,49 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/frontend/caseify/dist
+/frontend/caseify/tmp
+/frontend/caseify/out-tsc
+/frontend/caseify/bazel-out
+
+# Node
+/frontend/caseify/node_modules
+/frontend/caseify/npm-debug.log
+/frontend/caseify/yarn-error.log
+
+# IDEs and editors
+/frontend/caseify/.idea/
+/frontend/caseify/.project
+/frontend/caseify/.classpath
+/frontend/caseify/.c9/
+/frontend/caseify/*.launch
+/frontend/caseify/.settings/
+/frontend/caseify/*.sublime-workspace
+
+# Visual Studio Code
+/frontend/caseify/.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+/frontend/caseify/.history/*
+
+# Miscellaneous
+/frontend/caseify/.angular/cache
+/frontend/caseify/.sass-cache/
+/frontend/caseify/connect.lock
+/frontend/caseify/coverage
+/frontend/caseify/libpeerconnection.log
+/frontend/caseify/testem.log
+/frontend/caseify/typings
+
+# System files
+/frontend/caseify/.DS_Store
+/frontend/caseify/Thumbs.db
+
+#environment 
+/frontend/caseify/src/environments
+#python-backend
+
+/backend/caseify/caseify/.env
+/backend/caseify/db.sqlite3

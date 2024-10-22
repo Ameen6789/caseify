@@ -1,0 +1,122 @@
+body{
+    background-color: rgba(220, 220, 220, 0.225);
+}
+
+.navbar{
+    padding-left: 5%;
+    padding-right: 5%;
+    max-height: 60px;
+}
+.navbar a{
+text-decoration: none;
+color: #212529;
+}
+.hero-container{
+    padding-top: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 120px;
+}
+.hero-heading{
+    font-size: 48px;
+    position: relative;
+    z-index: 999;
+}
+.review-heading{
+    font-size: 38px;
+}
+.upload-heading{
+    font-size: 48px;
+}
+
+.images-group{
+    display: flex;
+    align-items: center;
+}
+.overlap{
+    margin-left: -18px;
+    border: 2px solid white ;
+}
+.reviews-container{
+    
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.reviews-container h1{
+    font-size: 48px;
+}
+.review p{
+    font-size: 18px;
+}
+.hero-cover .cover-skin-photo{
+    border-radius: 35px;
+}
+.hero-cover{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.hero-cover-line{
+    top:480px;
+    left:-20px;
+}
+
+.hero-cover-your-image{
+    top:-15px;
+    right:-50px;
+}
+.slides-images-container{
+    margin-top: 130px;
+}
+.slide-image .cover-skin-photo{
+    border-radius: 35px;
+}
+.slide-image{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+marquee{
+    height: 800px;
+    position: relative;
+    z-index: 40;
+
+}
+
+
+.upload-container{
+    margin-top: 130px;
+}
+@media(min-width:600px){
+    .hero-cover-your-image{
+        top:0px;
+        right:-120px;
+    }
+}
+@media(min-width:992px){
+
+    .navbar{
+        padding-left: 15%;
+        padding-right: 15%;
+        
+    }
+    .hero-container{
+        
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .hero-heading{
+        font-size: 60px;
+    }
+    .hero-image{
+        margin-left: 100px;
+    }
+    .reviews-container{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    footer{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    
+}

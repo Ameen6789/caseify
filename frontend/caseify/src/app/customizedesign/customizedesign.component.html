@@ -1,0 +1,189 @@
+<body>
+    <nav class=" py-2 bg-white fixed-top navbar border-bottom">
+        <p class="fw-bold fs-5 mb-0">caseify</p>
+        <ul class="nav me-0 d-flex align-items-center">
+            <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+                <p (click)="logout()" class="mb-0"><a href="" class="fw-semibold text-dark text-decoration-none fs-6">Log out</a> </p>
+                </ng-container>
+              
+                <ng-template #loggedOut>
+                  <p (click)="login()" class="mb-0"> <a href="" class="fw-semibold text-dark text-decoration-none fs-6">Log in</a></p>
+                </ng-template>
+            
+        </ul>
+        
+    </nav>
+    
+    <div class="d-flex  align-items-center justify-content-center bg-white progress-main-container">
+        <div class="progress-container d-flex  flex-lg-column-reverse bg-white w-100">
+            <div class="d-flex flex-column  flex-lg-row progress-bar  me-4 lg-w-100">
+                <div class="completed-progress d-flex bg-success"></div>
+                <div class="current-progress d-flex bg-dark"></div>
+                <div class="remaining-progress d-flex bg-secondary"></div>
+            </div>
+            <div class="d-flex flex-column justify-content-start flex-lg-row  align-items-start py-3 w-100 row-lg">
+                <div class="d-flex align-items-center justify-content-center mb-2 mb-lg-0  px-3 col-lg-4">
+                    <img src="assets/images/snake-1.png" alt="" height="80px" width="80px" class="me-4">
+                    <div class="d-flex flex-column justify-content-center">
+                        <p class="fw-bold mb-0">Step 1: Add image</p>
+                        <p class="text-secondary mb-0">Choose an image for your case</p>
+                    </div>
+                </div>
+            
+                <div class="d-flex align-items-center justify-content-center mb-2  mb-lg-0 px-3 col-lg-4">
+                    <img src="assets/images/snake-2.png" alt="" height="80px" width="80px" class="me-4">
+                    <div class="d-flex flex-column justify-content-center">
+                        <p class="fw-bold mb-0">Step 2: Customize design</p>
+                        <p class="text-secondary mb-0">Make the case yours</p>
+                    </div>
+                </div>
+            
+                <div class="d-flex align-items-center justify-content-center  mb-lg-0 px-3 col-lg-4">
+                    <img src="assets/images/snake-3.png" alt="" height="80px" width="80px" class="me-4">
+                    <div class="d-flex flex-column justify-content-center">
+                        <p class="fw-bold mb-0">Step 3: Summary</p>
+                        <p class="text-secondary mb-0">Review your final design</p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <div id="cover-page" >
+        <div class="file-progress-container mb-4 " id="file-progress-container">
+            <div class="h-100 div d-flex align-items-center justify-content-center flex-column">
+                <div class="loading-symbol">
+                    
+                </div>
+                <p class="mb-2  fw-semibold">Uploading...</p> 
+            </div>
+              
+        </div>
+    </div>   
+    <div  class="image-options-container d-lg-flex align-items-start justify-content-center mt-5 bg-white" >
+
+        <div class="image-customize-container  d-flex rounded-1 position-relative" id="image-customize-container">
+            <div class="d-inline-block d-flex justify-content-center align-items-center position-relative my-5 w-100">
+                <img src="assets/images/phone-template.png" alt=""  class="position-relative phone-case" draggable="false" id="phone-case">
+                
+                <div class="case-color position-absolute top-0" id="case-color"></div>
+                            
+                    
+                
+            </div>
+            <div
+                class="rectangle position-absolute" ngResizable ngDraggable rzHandles="ne,nw,sw,se"  [rzAspectRatio]="aspectratio" [rzMinWidth]="240"  [position]="{x:100,y:50}"
+                (mouseup)="newPosition($event)" (endOffset)="onMoveEnd($event)" (rzStop)="onResizeStop($event)" id="user-image-rectangle">
+
+               
+                
+                <img src="" alt="" class="custom-image" id="user-image">
+                <div class="top-left-drag-dot position-absolute"></div>
+                <div class="top-right-drag-dot position-absolute"></div>
+                <div class="bottom-left-drag-dot position-absolute"></div>
+                <div class="bottom-right-drag-dot position-absolute"></div> 
+            </div>
+        </div>
+
+
+    
+        <form class="options-container  bg-white position-relative" (ngSubmit)="onSubmit()">
+
+            <div class="options pb-5 px-3" >
+                <h3 class="text-left mb-4 mt-3 fw-bold ps-3">Customize your case</h3>
+                <div class="d-flex flex-column colors mb-4 mx-3">
+                    <h6 class="fw-bold mb-2" id="phone-case-color">Color</h6>
+                    <div class="d-flex">
+                        <label for="black-color" class="me-3">
+                            <input type="radio" name="casecolor" id="black-color" (change)="changeCaseColorandPrice($event,'casecolor')" value="black" class="d-none" checked>
+                            <div class="black-color rounded-circle "></div>
+                        </label>
+                        <label for="red-color" class="me-3">
+                            <input type="radio" name="casecolor" id="red-color" (change)="changeCaseColorandPrice($event,'casecolor')"  value="red" class="d-none">
+                            <div class="red-color rounded-circle "></div>
+                        </label>
+                        <label for="blue-color">
+                            <input type="radio" name="casecolor" id="blue-color" (change)="changeCaseColorandPrice($event,'casecolor')" value="blue" class="d-none">
+                            <div class="blue-color rounded-circle "></div>
+                        </label>
+                    </div>
+                
+                
+                </div>
+                <div class="mx-3 mb-4">
+                    <h6 class="fw-bold mb-2">Model</h6>
+                    <select name="iphone-model" id="" class="form-select fw-medium fs-6 iphone-models" [(ngModel)]="phoneModel">
+                        <option value="iphonex">IPhone X</option>
+                        <option value="iphone11">IPhone 11</option>
+                        <option value="iphone12">IPhone 12</option>
+                        <option value="iphone13">IPhone 13</option>
+                        <option value="iphone14">IPhone 14</option>
+                        <option value="iphone15">IPhone 15</option>
+                        <option value="iphone16">IPhone 16</option>
+                    </select>
+    
+                </div>
+
+                <div class="materials mb-5 mx-3">
+                    <h6 class="fw-bold mb-2">Material</h6>
+                    <input type="radio" name="material-type"  [(ngModel)]="materialType" (change)="changeCaseColorandPrice($event,'material-type')" id="silicone" class="d-none" value="silicone" data-price="0" >
+                    <label for="silicone" class="d-flex justify-content-between material rounded-2 p-3 mb-3">
+                        <h6 class="fw-medium mb-0">Silicone</h6>
+                        <p class="fs-6 fw-medium mb-0">+ $0.00</p>
+                    </label>
+                    
+                    <input type="radio" name="material-type" [(ngModel)]="materialType"  (change)="changeCaseColorandPrice($event,'material-type')" id="soft-polycarbonate" class="d-none" value="polycarbonate" data-price="5">
+                    <label for="soft-polycarbonate" class="d-flex flex-column rounded-2 p-3 material">
+                        
+                        <div class="d-flex justify-content-between w-100">
+                            <h6 class="fw-medium mb-0">Soft Polycarbonate</h6>
+                            <p class="fs-6 fw-medium mb-0">+ $5.00</p>
+                        </div>
+                        <p class="fs-6 text-secondary mb-0">Scartch-resistant coating</p>
+                        
+                    </label>
+                </div>
+    
+                <div class="finishes  mx-3 pb-2">
+                    <h6 class="fw-bold mb-3">Finish</h6>
+                    <input type="radio" name="finish-type" [(ngModel)]="finishType" (change)="changeCaseColorandPrice($event,'finish-type')" id="smoothfinish" class="d-none" value="smooth" data-price="0" >
+                    <label for="smoothfinish" class="d-flex justify-content-between finish rounded-2 p-3 mb-3">
+                        <h6 class="fw-medium mb-0">Smooth Finish</h6>
+                        <p class="fs-6 fw-medium mb-0">+ $0.00</p>
+                    </label>
+        
+                    <input type="radio" name="finish-type" [(ngModel)]="finishType" (change)="changeCaseColorandPrice($event,'finish-type')" id="texturefinish" class="d-none" value="textured" data-price="3">
+                    <label for="texturefinish" class="d-flex flex-column rounded-2 p-3 finish mb-lg-5 mb-0">
+                        
+                        <div class="d-flex justify-content-between w-100">
+                            <h6 class="fw-medium mb-0">Texture Finish</h6>
+                            <p class="fs-6 fw-medium mb-0">+ $3.00</p>
+                        </div>
+                        <p class="fs-6 text-secondary mb-0">Soft grippy texture</p>
+                        
+                    </label>
+                </div>
+            </div>
+            
+            <div class="px-3 fixed-lg-static bg-white mt-lg-5 w-100">
+                <hr class="mb-0 pb-0">
+                <div class="mx-3 d-flex align-items-center py-4 py-lg-2">
+                    <p class="fw-bold fs-5 me-4 mb-0" id="final-price">$10.00</p>
+
+                    <button class="btn btn-success text-white w-100" type="submit">
+                            Continue 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                            </svg>
+                        
+                    </button>
+                
+                </div>
+            </div>
+        </form>
+        
+        
+    </div>
+    
+    
+    
+</body>

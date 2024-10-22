@@ -1,0 +1,245 @@
+<body>
+
+    <nav class=" py-2 bg-white fixed-top navbar border-bottom">
+        
+        <p class="fw-bold fs-5 mb-0">caseify</p>
+        <ul class="nav me-0 d-flex align-items-center">
+            <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+                <p (click)="logout()" class="mb-0"><a href="" class="fw-semibold  text-decoration-none fs-6 me-5">Log out</a> </p>
+            </ng-container>
+              
+            <ng-template #loggedOut>
+                <p (click)="login()" class="mb-0"> <a href="" class="fw-semibold text-decoration-none fs-6 me-5">Log in</a></p>
+            </ng-template>
+            <a href="/addimage" class="text-white text-decoration-none">
+                <button class="btn btn-success text-white">
+                
+                    Create case 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                    </svg>
+                
+                </button>
+            </a>
+        </ul>
+        
+    </nav>
+<div class=" hero-container text-center text-lg-start d-lg-flex ">
+    <div class="">
+        <img src="assets/images/snake-1.png" alt="" width="90px" height="100px">
+        <h1 class="fw-bold mb-5 hero-heading">Your Image on a <br><span class="bg-success text-white">Custom</span> Phone Case</h1>
+        <p class="mb-5 fs-5">Capture your favourite memories with your own, <span class="fw-bold">one-of-one</span> phone case. Caseify allows you to protect your memories, not just your phone case</p>
+        <div class="d-flex flex-column align-items-center align-items-lg-start justify-content-start">
+            <ul class="text-start list-unstyled pb-5">
+                <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-lg me-1" viewBox="0 0 16 16">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                </svg>High-quality, durable material</li>
+                <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-lg me-1" viewBox="0 0 16 16">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                </svg>5 year print guarantee</li>
+                <li class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-lg me-1" viewBox="0 0 16 16">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                </svg>Modern iPhone models supported</li>
+            </ul>
+        </div>
+        <div class="image-group-main-container mb-4 mb-lg-0 d-lg-flex align-items-center">
+            <div class="image-group me-lg-3">
+                <img src="assets/images/users/user-1.png" alt="" width="40px" height="40px" class="rounded-circle">
+                <img src="assets/images/users/user-2.png" alt="" width="40px" height="40px" class="rounded-circle overlap">
+                <img src="assets/images/users/user-3.png" alt="" width="40px" height="40px" class="rounded-circle overlap">
+                <img src="assets/images/users/user-4.jpg" alt="" width="40px" height="40px" class="rounded-circle overlap">
+                <img src="assets/images/users/user-5.jpg" alt="" width="40px" height="40px" class="rounded-circle overlap">
+            </div>
+            <div >
+                <p class="mb-0 pb-0"><i class="bi bi-star-fill fs-6 text-success me-1"></i><i class="bi bi-star-fill fs-6 text-success me-1"></i><i class="bi bi-star-fill fs-6 text-success me-1"></i><i class="bi bi-star-fill fs-6 text-success me-1"></i><i class="bi bi-star-fill fs-6 text-success"></i></p>
+                <p class="mb-0"><span class="fw-bold">1250+</span> happy customers</p>
+            </div>
+        
+        </div>
+    </div>
+    
+
+    <div class="position-relative hero-cover-container d-inline-block mb-4 mt-5 my-lg-0 hero-image">
+        <img src="assets/images/your-image.png" alt="" height="120px" width="170px" class="position-absolute hero-cover-your-image" >
+        <img src="assets/images/line.png" alt="" height="140px" width="80px" class="position-absolute hero-cover-line" >
+        <div class="position-relative d-inline-block hero-cover">
+            <img src="assets/images/testimonials/1.jpg" alt="" width="242px" height="500px" class="position-absolute top-0 start-0 z-index-0 cover-skin-photo ms-1">
+            <img src="assets/images/phone-template.png" alt="" width="250px" height="500px" class="position-relative z-index-5 ">
+            
+        </div>
+    </div>
+        
+
+</div>
+<div class="reviews-container d-flex flex-column  align-items-center justify-content-center">
+    <div class="d-flex flex-column  flex-lg-row-reverse align-items-center justify-content-center">
+        <img src="assets/images/snake-2.png" alt="" width="90px" height="93px" class="mb-4 mb-lg-0 ms-lg-4">
+        <h1 class="fw-bold review-heading text-center mb-5 mb-lg-0">What our customers say</h1>
+    </div>
+    
+    <div class="reviews mt-lg-5 d-lg-flex">
+        <div class="review mb-5 me-lg-5 pe-lg-4">
+            <p><i class="bi bi-star-fill fs-5 text-success me-1"></i><i class="bi bi-star-fill fs-5 text-success me-1"></i><i class="bi bi-star-fill fs-5 text-success me-1"></i><i class="bi bi-star-fill fs-5 text-success me-1"></i><i class="bi bi-star-fill fs-5 text-success"></i></p>
+            <p class=" mb-0">"The case feels durable and I even got a compliment on the design. Had the case for two and a half months now and <span class="bg-dark text-white">the image is super clear</span>, on the case I had before, the image started fading into yellow-ish color after a couple weeks. Love it."</p>
+            <div class="m-0 p-0 d-flex align-items-center mt-3">
+                <img src="assets/images/users/user-1.png" alt="" class="rounded-circle me-3" width="48px" height="48px">
+                <div>
+                    
+                    <p class="mb-0 pb-0 fw-bold fs-6">Jonathan</p>
+                    <p class="text-secondary mb-0 fs-6"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-lg" viewBox="0 0 16 16">
+                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                      </svg> Verified Purchase</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="review">
+            <p><i class="bi bi-star-fill fs-5 text-success me-1"></i><i class="bi bi-star-fill fs-5 text-success me-1"></i><i class="bi bi-star-fill fs-5 text-success me-1"></i><i class="bi bi-star-fill fs-5 text-success me-1"></i><i class="bi bi-star-fill fs-5 text-success"></i></p>
+            <p class=" mb-0">"I usually keep my phone together with my keys in my pocket and that led to some pretty heavy scratchmarks on all of my last phone cases. This one, besides a barely noticeable scratch on the corner, <span class="bg-dark text-white">looks brand new after about half a year</span>. I dig it."</p>
+            <div class="m-0 p-0 d-flex align-items-center mt-3">
+                <img src="assets/images/users/user-4.jpg" alt="" class="rounded-circle me-3" width="48px" height="48px">
+                <div>
+                    <p class="mb-0 pb-0 fw-bold mb-0 fs-6">Josh</p>
+                    <p class="text-secondary fs-6"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-lg border-2" viewBox="0 0 18 18">
+                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                      </svg> Verified Purchase</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="slides-images-container mb-5">
+        <marquee behavior="" direction="up"  class="border-top border-1 border-bottom">
+            <div class="row">
+                <div class="col-xl-4 col-md-6 d-flex align-items-center justify-content-center">
+                    <div class=" slide-images  p-4 rounded-5 bg-white mb-4 ">
+                        <div class="position-relative d-inline-block slide-image my-0 py-0">
+                            <img src="assets/images/testimonials/1.jpg" alt="" width="242px" height="500px" class="position-absolute top-0 start-0 z-index-0 cover-skin-photo ms-1">
+                            <img src="assets/images/phone-template.png" alt="" width="250px" height="500px" class="position-relative z-index-5 ">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-4 col-md-6 d-flex align-items-center justify-content-center">
+                    <div class=" slide-images  p-4 rounded-5 bg-white mb-4 ">
+                        <div class="position-relative d-inline-block slide-image my-0 py-0">
+                            <img src="assets/images/testimonials/2.jpg" alt="" width="242px" height="500px" class="position-absolute top-0 start-0 z-index-0 cover-skin-photo ms-1">
+                            <img src="assets/images/phone-template.png" alt="" width="250px" height="500px" class="position-relative z-index-5 ">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6 d-flex align-items-center justify-content-center">
+                    <div class=" slide-images  p-4 rounded-5 bg-white mb-4 ">
+                        <div class="position-relative d-inline-block slide-image my-0 py-0">
+                            <img src="assets/images/testimonials/3.jpg" alt="" width="242px" height="500px" class="position-absolute top-0 start-0 z-index-0 cover-skin-photo ms-1">
+                            <img src="assets/images/phone-template.png" alt="" width="250px" height="500px" class="position-relative z-index-5 ">
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-4 col-md-6 d-flex align-items-center justify-content-center">
+                    <div class=" slide-images  p-4 rounded-5 bg-white mb-4 ">
+                        <div class="position-relative d-inline-block slide-image my-0 py-0">
+                            <img src="assets/images/testimonials/4.jpg" alt="" width="242px" height="500px" class="position-absolute top-0 start-0 z-index-0 cover-skin-photo ms-1">
+                            <img src="assets/images/phone-template.png" alt="" width="250px" height="500px" class="position-relative z-index-5 ">
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-4 col-md-6 d-flex align-items-center justify-content-center">
+                    <div class=" slide-images  p-4 rounded-5 bg-white mb-4 ">
+                        <div class="position-relative d-inline-block slide-image my-0 py-0">
+                            <img src="assets/images/testimonials/5.jpg" alt="" width="242px" height="500px" class="position-absolute top-0 start-0 z-index-0 cover-skin-photo ms-1">
+                            <img src="assets/images/phone-template.png" alt="" width="250px" height="500px" class="position-relative z-index-5 ">
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-4 col-md-6 d-flex align-items-center justify-content-center">
+                    <div class=" slide-images  p-4 rounded-5 bg-white mb-4 ">
+                        <div class="position-relative d-inline-block slide-image my-0 py-0">
+                            <img src="assets/images/testimonials/6.jpg" alt="" width="242px" height="500px" class="position-absolute top-0 start-0 z-index-0 cover-skin-photo ms-1">
+                            <img src="assets/images/phone-template.png" alt="" width="250px" height="500px" class="position-relative z-index-5 ">
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+        
+                
+                
+            </div>
+            
+        </marquee>
+        
+    </div>
+    
+    
+</div>
+
+<div class="mx-5 d-flex flex-column justify-content-center pb-5 upload-container">
+    <h1 class="text-center fw-bold upload-heading">Upload your photo and <br> get  <span class="text-white bg-success">your own case</span> now</h1>
+    <div class="d-flex flex-column d-lg-none justify-content-center align-items-center my-5">
+        <img src="assets/images/cat-image.jpg" alt="" width="260px" height="400px" class="rounded-4">
+        <img src="assets/images/arrow-vertical.png" class="my-3" alt="">
+        <div class="position-relative d-inline-block slide-image my-0 py-0">
+            <img src="assets/images/cat-image.jpg" alt="" width="242px" height="500px" class="position-absolute top-0 start-0 z-index-0 cover-skin-photo ms-1">
+            <img src="assets/images/phone-template.png" alt="" width="250px" height="500px" class="position-relative z-index-5 ">
+            
+        </div>
+    </div>
+
+    <div class="d-lg-flex d-none justify-content-center align-items-center my-5">
+        <img src="assets/images/cat-image.jpg" alt="" width="250px" height="500px" class="rounded-4">
+        <img src="assets/images/arrow.png" class="mx-3" alt="">
+        <div class="position-relative d-inline-block slide-image my-0 py-0">
+            <img src="assets/images/cat-image.jpg" alt="" width="242px" height="500px" class="position-absolute top-0 start-0 z-index-0 cover-skin-photo ms-1">
+            <img src="assets/images/phone-template.png" alt="" width="250px" height="500px" class="position-relative z-index-5 ">
+            
+        </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <ul class="list-unstyled mb-5 fw-medium">
+            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-lg me-1" viewBox="0 0 16 16">
+                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+              </svg>High-quality silicone material</li>
+            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-lg me-1" viewBox="0 0 16 16">
+                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+              </svg>Scratch- and fingerprint resistant coating</li>
+            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-lg me-1" viewBox="0 0 16 16">
+                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+              </svg>Wireless charging compatible</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-lg me-1" viewBox="0 0 16 16">
+                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+              </svg>5 year print warranty</li>
+        </ul>
+    </div>
+    
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-success text-white">
+            <a href="/addimage" class="text-white text-decoration-none">
+                Create your case now 
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                </svg>
+            </a>
+        </button>
+    </div>
+    
+</div>
+
+
+</body>
+
+
+

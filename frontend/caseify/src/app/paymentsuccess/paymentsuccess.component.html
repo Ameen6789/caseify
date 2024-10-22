@@ -1,0 +1,104 @@
+<body>
+    <nav class="h-100 bg-white fixed-top navbar border-bottom d-flex">
+        <p class="fw-bold fs-5 mb-0">caseify</p>
+        <ul class="nav d-flex align-items-center justify-content-center fw-bold">
+            
+            <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+                <p (click)="logout()" class="mb-0"><a href="" class="fw-semibold text-dark text-decoration-none fs-6">Log out</a> </p>
+            </ng-container>
+              
+            <ng-template #loggedOut>
+                <p (click)="login()" class="mb-0"> <a href="" class="fw-semibold text-dark text-decoration-none fs-6">Log in</a></p>
+            </ng-template>
+            
+            
+        </ul>
+    </nav>
+    <div class="mt-4 main-container pt-5">
+        <div class="mx-3">
+            <p class="fw-bold text-success mb-1"> Thank You!</p>
+            <h1 class="fw-bold mb-1">Your case is on the way!</h1>
+            <p class="fw-medium text-secondary fs-6">We have received your order and are now processing it.</p>
+            <p class="fw-bold mt-4 mb-1">Order number</p>
+            <p>{{ order_full_details.order_id }}</p>
+            <hr class="my-4">
+        </div>
+        <div class="mx-3">
+            <p class="fw-bold fs-5 mb-2">You made a great choice!</p>
+            <p class="mb-2">We at Caseify believe that a phone case doesn't only need to look good, but also last you for the year to come. We offer a 5-year print guarantee. If your case isn't of high quality, we'll replace it for free</p>
+        </div>
+        
+        <div class="final-image-container d-flex align-items-center justify-content-center  mt-0 rounded-2">
+            <div class="d-inline-block  position-relative">
+                <div class="case-color position-absolute  z-index-2" id="case-color" style="background-color: '{{ order_full_details.case_color }}' ;">
+                    <img src="{{ order_full_details.cropped_image }}" alt="" class="user-image">
+                </div>
+
+                <img src="assets/images/clearphone.png" alt=""  class="z-index-5 position-relative final-image" id="final-image">
+            </div>
+            
+        </div>
+
+        <div class="mx-3 mt-5 d-md-flex justify-content-between w-100">
+            <div class="mb-4 mb-lg-0 w-50">
+                <h5 class="fw-bold ">Shipping Address</h5>
+                <address class="fs-6 mb-lg-0">
+                    {{ order_full_details.shipping_address_name }}<br>
+                    {{ order_full_details.shipping_address_street }}<br>
+                    {{ order_full_details.shipping_address_postalcode }} <br>
+                    {{ order_full_details.shipping_address_state }}
+                </address>
+            </div>
+
+            <div class="w-50">
+                <h5 class="fw-bold">Billing Address</h5>
+                <address class="fs-6 mb-lg-0">
+                    {{ order_full_details.billing_address_name }}<br>
+                    {{ order_full_details.billing_address_street }}<br>
+                    {{ order_full_details.billing_address_postalcode }} <br>
+                    {{ order_full_details.billing_address_state }}
+                </address>
+            </div>
+               
+        </div>
+        <hr class="my-5"> 
+
+        <div class="mx-3 d-md-flex justify-content-between w-100">
+            <div class="mb-4 w-50">
+                <h5 class="fw-bold">Payment status</h5>
+                <p class="fs-6">Paid</p>
+                
+            </div>
+
+            <div class="w-50">
+                <h5 class="fw-bold">Shipping method</h5>
+                <p class="fs-6 mb-1">DHL</p>
+                <p class="fs-6">Takes upto 3 working days</p>
+                
+            </div>
+               
+        </div>
+        <hr class="my-5"> 
+
+        <div class="mx-3 mb-5">
+            <div class="d-flex justify-content-between mb-4">
+                <p class="mb-0 fw-bold">Subtotal</p>
+                <p class="fw-medium mb-0">${{ order_full_details.amount }}.00</p>
+            </div>
+            <div class="d-flex justify-content-between mb-4">
+                <p class="mb-0 fw-bold">Shipping</p>
+                <p class="fw-medium mb-0">$3.00</p>
+            </div>
+            <div class="d-flex justify-content-between">
+                <p class="mb-0 fw-bold">Total</p>
+                <p class="fw-bold mb-0">${{ full_price_post_shipping }}.00</p>
+            </div>
+            
+            
+            
+        </div>
+        
+
+    </div>
+    
+</body>
